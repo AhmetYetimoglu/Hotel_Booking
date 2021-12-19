@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmet\\Desktop\\Deneme\\webui\\webui.csproj": {}
+    "C:\\Users\\Ahmet\\Desktop\\Proje\\webui\\webui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmet\\Desktop\\Deneme\\webui\\webui.csproj": {
+    "C:\\Users\\Ahmet\\Desktop\\Proje\\webui\\webui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmet\\Desktop\\Deneme\\webui\\webui.csproj",
+        "projectUniqueName": "C:\\Users\\Ahmet\\Desktop\\Proje\\webui\\webui.csproj",
         "projectName": "webui",
-        "projectPath": "C:\\Users\\Ahmet\\Desktop\\Deneme\\webui\\webui.csproj",
+        "projectPath": "C:\\Users\\Ahmet\\Desktop\\Proje\\webui\\webui.csproj",
         "packagesPath": "C:\\Users\\Ahmet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmet\\Desktop\\Deneme\\webui\\obj\\",
+        "outputPath": "C:\\Users\\Ahmet\\Desktop\\Proje\\webui\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

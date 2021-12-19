@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Hotel_Booking.webui.Data;
 using Hotel_Booking.webui.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,11 @@ namespace Hotel_Booking.webui.Controllers
         // localhost:5000/product/list
         public IActionResult list()
         {
-            return View();
+            var productViewModel = new ProductViewModel()
+            {
+                Products = ProductRepository.Products
+            };
+            return View(productViewModel);
         }
         // localhost:5000/product/details/2
         public IActionResult Details()
