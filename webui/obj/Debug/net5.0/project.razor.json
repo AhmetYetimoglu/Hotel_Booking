@@ -15639,8 +15639,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Home\\Details.cshtml",
-      "TargetPath": "Views\\Home\\Details.cshtml",
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Index.cshtml",
+      "TargetPath": "Views\\Product\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15651,11 +15651,6 @@
     {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shared\\_navbar.cshtml",
       "TargetPath": "Views\\Shared\\_navbar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Home\\List.cshtml",
-      "TargetPath": "Views\\Home\\List.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15674,8 +15669,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\List.cshtml",
+      "TargetPath": "Views\\Product\\List.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Login\\Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Details.cshtml",
+      "TargetPath": "Views\\Product\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shared\\_ornek.cshtml",
+      "TargetPath": "Views\\Shared\\_ornek.cshtml",
       "FileKind": "mvc"
     }
   ],

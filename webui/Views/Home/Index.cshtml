@@ -1,10 +1,4 @@
-@model ProductViewModel
-
-@{
-    var products = Model.Products;
-    @* var categoryName = Model.Category.Name; *@
-}
-
+@model Reservation
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +64,122 @@
 <!-- banner -->
 	<div class="banner">
 		@await Html.PartialAsync("_navbar")
-		<partial name="_header">
+		<div class="banner-info">
+			<div class="container">
+				<h1>Book Your Best Trip</h1>
+				<div class="sap_tabs">	
+					<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+							<ul class="resp-tabs-list">
+								<li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span><i class="glyphicon glyphicon-home" aria-hidden="true"></i>Hotels</span></li>
+								<div class="clear"></div>
+							</ul>				  	 
+							<div class="resp-tabs-container">
+								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+									<div class="facts">
+										<div class="booking-form">
+											<div class="online_reservation">
+												<div class="b_room">
+												@using (Html.BeginForm("index","Home",FormMethod.Post))
+												{
+														<div class="booking_room">
+															<div class="reservation">
+																<ul>		
+																	<li  class="span1_of_1 desti">
+																			<div class="book_date">
+																				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+																				<input type="text" name="Name" placeholder="Departure City or Hotel" class="typeahead1 input-md form-control tt-input" required="">
+																			</div>					
+																		</li>
+																</ul>
+															</div>
+															<div class="reservation">
+																<ul>	
+																		<li  class="span1_of_1">
+																			<h5>Check In</h5>
+																			<div class="book_date">
+																		<div class="book_date">
+																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+																				<input class="date" name="ArrivalDate" id="datepicker" type="text" value="19/10/2021" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2021';}" required="">
+																		</div>	
+
+																			</div>		
+																		</li>
+																		<li  class="span1_of_1 left">
+																			<h5>Check Out</h5>
+																			<div class="book_date">
+																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+																				<input class="date" name="DepartureDate" id="datepicker1" type="text" value="19/10/2021" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2021';}" required="">
+																			</div>					
+																		</li>
+																		<li class="span1_of_1 adult">
+																			<h5>Adults (18+)</h5>
+																			<!----------start section_room----------->
+																			<div class="section_room">
+																				@Html.DropDownListFor(m=>m.NumberOfPeople, new SelectList(ViewBag.Peoples,"Value","Text"), new {@class = "frm-field required"})
+																			</div>	
+																	</li>
+																	<li class="span1_of_1 adult">
+																			<h5>Children (0-17)</h5>
+																			<!----------start section_room----------->
+																			<div class="section_room">
+																				@Html.DropDownListFor(m=>m.NumberOfChildren, new SelectList(ViewBag.Children,"Value","Text"), new {@class = "frm-field required"})
+																			</div>	
+																	</li>
+																	<li class="span1_of_1 adult">
+																			<h5>Class</h5>
+																			<!----------start section_room----------->
+																			<div class="section_room">
+																				@Html.DropDownListFor(m=>m.Room, new SelectList(ViewBag.rooms,"Value","Text"), new {@class = "frm-field required"})
+																			</div>	
+																	</li>
+																		<div class="clearfix"></div>
+																</ul>
+																	<!---strat-date-piker---->
+																		<link rel="stylesheet" href="~/css/jquery-ui.css" />
+																		<script src="~/js/jquery-ui.js"></script>
+																			<script>
+																					$(function() {
+																					$( "#datepicker,#datepicker1" ).datepicker();
+																					});
+																			</script>
+																	<!---/End-date-piker---->
+															</div>
+															<div class="reservation">
+																<ul>	
+																		<li class="span1_of_3">
+																			<div class="date_btn">
+																					<input type="submit" value="Submit" />
+																			</div>
+																		</li>
+																		<div class="clearfix"></div>
+																</ul>
+															</div>
+														</div>
+												}	
+													<div class="clearfix"></div>
+												</div>
+											</div>
+											<!---->
+										</div>	
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+							$(document).ready(function () {
+								$('#horizontalTab').easyResponsiveTabs({
+									type: 'default', //Types: default, vertical, accordion           
+									width: 'auto', //auto or any width like 600px
+									fit: true   // 100% fit in a container
+								});
+							});
+						</script>
+				<div class="login">
+					<a href="https://localhost:5001/login">Login</a>
+				</div>
+			</div>
+		</div>
 	</div>
 <!-- //banner -->
 <!-- footer -->

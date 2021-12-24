@@ -1,0 +1,81 @@
+@model ProductViewModel
+
+@{
+    var products = Model.Products;
+     @* var categoryName = Model.Category.Name; *@
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/styles.css?v=1.6" rel="stylesheet">
+<!-- js -->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/scripts.js?v=1.7"></script>
+<!-- //js -->
+<!--FlexSlider Kütüphanesi-->
+<!--Sayfa yüklenirken sayfanın içindeyken üst tarafa kaydırma yapar-->
+		<link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" />
+		<script defer src="~/js/jquery.flexslider.js"></script>
+		<script type="text/javascript">
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	  </script>
+<!--End-slider-script-->
+<!-- pop-up-script -->
+<!--chocolat kütüphanesi Birden çok fotoğrafı aynı ekran içinde göstermemizi sağlar-->
+<script src="~/js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="~/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('.view-seventh a').Chocolat();
+		});
+		</script>
+<!-- //pop-up-script -->
+<script src="~/js/easyResponsiveTabs.js" type="text/javascript"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="~/js/move-top.js"></script>
+<script type="text/javascript" src="~/js/easing.js"></script>
+<!--Click eventi olduğunda ekranı üst tarafa kaydırır-->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- banner -->
+	<div class="banner">
+		@await Html.PartialAsync("_navbar")
+		<partial name="_header">
+	</div>
+<!-- //banner -->
+<!-- footer -->
+	@await Html.PartialAsync("_footer")
+<!-- //footer -->
+
+</body>	
+

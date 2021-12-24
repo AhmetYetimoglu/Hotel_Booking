@@ -12,10 +12,11 @@ namespace Hotel_Booking.webui.Data
         {
             _products = new List<Product>
             {
-                new Product {ProductId=1, Name="Hotel2",Price=3000,Description="iyi", IsApproved=false},
-                new Product {ProductId=2, Name="Hotel3",Price=4000,Description="çok iyi", IsApproved=true},
-                new Product {ProductId=3, Name="Hotel4",Price=5000,Description="harika", IsApproved=true},
-                new Product {ProductId=4, Name="Hotel5",Price=6000,Description="mükemmel", IsApproved=true},
+                new Product {Name="Deneme 1", City="Antalya", Price=3000,IsApproved=true, ImageUrl= "hotel_1.jpg", ProductId =1},
+                new Product {Name="Deneme 2", City="İzmir",Price=4000,IsApproved=true, ImageUrl= "hotel_2.jpg", ProductId =2},
+                new Product {Name="Deneme 3", City="Antalya",Price=5000,IsApproved=true, ImageUrl= "hotel_3.jpg", ProductId =3},
+                new Product {Name="Deneme 4", City="İzmir",Price=7000,IsApproved=true, ImageUrl= "hotel_4.jpg", ProductId =4},
+                new Product {Name="Deneme 5", City="Antalya",Price=7000,IsApproved=true, ImageUrl= "hotel_5.jpg", ProductId =5},
             };
         }
         public static List<Product> Products{

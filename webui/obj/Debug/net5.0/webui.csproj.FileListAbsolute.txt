@@ -122,9 +122,7 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\scopedcss\bundle\webui.style
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.TagHelpers.input.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.TagHelpers.output.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.RazorCoreGenerate.cache
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Home\Details.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Home\List.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_footer.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_header.cshtml.g.cs
@@ -142,3 +140,7 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\ref\webui.dll
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.pdb
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.genruntimeconfig.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.csproj.CopyComplete
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_ornek.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\List.cshtml.g.cs

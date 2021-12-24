@@ -1,17 +1,12 @@
-@model ProductViewModel
-
-@{
-    var products = Model.Products;
-    @* var categoryName = Model.Category.Name; *@
-}
-
+<!--Oluşturduğumuz modelin yolunu vererek ürünlerimizi dinamikten statik hale getiririz -->
+@model Product
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
+	<title>Login</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -23,8 +18,7 @@
 <script src="~/js/jquery-1.11.1.min.js"></script>
 <script src="~/js/scripts.js?v=1.7"></script>
 <!-- //js -->
-<!--FlexSlider Kütüphanesi-->
-<!--Sayfa yüklenirken sayfanın içindeyken üst tarafa kaydırma yapar-->
+<!--FlexSlider-->
 		<link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" />
 		<script defer src="~/js/jquery.flexslider.js"></script>
 		<script type="text/javascript">
@@ -39,7 +33,6 @@
 	  </script>
 <!--End-slider-script-->
 <!-- pop-up-script -->
-<!--chocolat kütüphanesi Birden çok fotoğrafı aynı ekran içinde göstermemizi sağlar-->
 <script src="~/js/jquery.chocolat.js"></script>
 		<link rel="stylesheet" href="~/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
 		<!--light-box-files -->
@@ -53,7 +46,6 @@
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="~/js/move-top.js"></script>
 <script type="text/javascript" src="~/js/easing.js"></script>
-<!--Click eventi olduğunda ekranı üst tarafa kaydırır-->
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -68,35 +60,24 @@
 </head>
 <body>
 <!-- banner -->
-<div class="banner"> <!--style.css-->
-    @await Html.PartialAsync("_navbar")
-    @* @await Html.PartialAsync("_header") *@
-    <partial name="_header">
-</div>
-<!-- //banner -->
-    <main>
-        <div class="container">       
-            @* @if(products.Count ==0 )
-            {
-                @await Html.PartialAsync("_product")
-            }
-            else
-            {
-                <div class="row">                  
-                    @foreach (var product in products)
-                    {    
-                        @* Her bir ürünü alıp göstereceğimiz bölüm 
-                        <div class="col-md-3">
-                            @await Html.PartialAsync("_product",product)                 
-                        </div>       
-                    }   
+	@await Html.PartialAsync("_navbarBir")
+<!-- banner -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row no-gutters">
+                <div class="col-md-3">
+                    <img src="~/images/@Model.ImageUrl" class="card-img">
                 </div>
-            }*@
-            @await Html.PartialAsync("_product")
+                <div class="col-md-9">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    <!-- footer --> 
-        @await Html.PartialAsync("_footer")
-    <!-- //footer -->
+    </div>
+    <!-- footer -->
+	@await Html.PartialAsync("_footer")
+<!-- //footer -->
 </body>
 </html>
