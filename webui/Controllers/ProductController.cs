@@ -146,5 +146,12 @@ namespace Hotel_Booking.webui.Controllers
             ProductRepository.EditProduct(p);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+
+        public IActionResult Delete(int ProductId)
+        {
+            ProductRepository.DeleteProduct(ProductId);
+            return RedirectToAction("Index");
+        }
     }
 }
