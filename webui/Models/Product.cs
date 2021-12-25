@@ -11,6 +11,7 @@ namespace Hotel_Booking.webui.Models
         public double Price { get; set; }
         public bool IsApproved { get; set; }
         public string ImageUrl { get; set; }
+        public string ReservedDate { get; set; }
         public string ArrivalDate { get; set; }
         public string DepartureDate { get; set; }
         public string Room { get; set; }

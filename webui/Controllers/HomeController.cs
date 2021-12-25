@@ -46,15 +46,14 @@ namespace Hotel_Booking.webui.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-         public IActionResult Index(Reservation model)
+         public IActionResult Index(ProductViewModel model)
         {
             if(ModelState.IsValid)
             {
-                Reservation obj = new Reservation(){Name = model.Name, ArrivalDate = model.ArrivalDate, DepartureDate = model.DepartureDate, Room = model.Room, NumberOfPeople = model.NumberOfPeople, NumberOfChildren = model.NumberOfChildren};
+                Product obj = new Product(){Name = model.Products[0].Name, ArrivalDate = model.Products[0].ArrivalDate, DepartureDate = model.Products[0].DepartureDate, Room = model.Products[0].Room, NumberOfPeople = model.Products[0].NumberOfPeople, NumberOfChildren = model.Products[0].NumberOfChildren};
                 return RedirectToAction("list","Product", obj);
             }
             return View();
         }
-        //localhost:5000/product/list  
     }
 }
