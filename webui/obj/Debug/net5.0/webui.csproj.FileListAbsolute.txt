@@ -194,3 +194,4 @@ C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.pdb
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.genruntimeconfig.cache
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.csproj.CopyComplete
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs

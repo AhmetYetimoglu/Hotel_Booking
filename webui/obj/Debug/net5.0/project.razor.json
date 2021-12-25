@@ -15619,6 +15619,11 @@
   "RootNamespace": "webui",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Edit.cshtml",
+      "TargetPath": "Views\\Product\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shared\\_product.cshtml",
       "TargetPath": "Views\\Shared\\_product.cshtml",
       "FileKind": "mvc"

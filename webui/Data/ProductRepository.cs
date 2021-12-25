@@ -32,5 +32,20 @@ namespace Hotel_Booking.webui.Data
         {
             return _products.FirstOrDefault(p=>p.ProductId==id);
         }
+        public static void EditProduct(Product product)
+        {
+            foreach (var p in _products)
+            {
+                if(p.ProductId == product.ProductId)
+                {
+                    p.Name = product.Name;
+                    p.City = product.City;
+                    p.Price = product.Price;
+                    p.ImageUrl = product.ImageUrl;
+                    p.IsApproved = true;
+                    p.ReservedDate = product.ReservedDate;
+                }
+            }
+        }
     }
 }

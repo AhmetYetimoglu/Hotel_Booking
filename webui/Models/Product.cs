@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
 namespace Hotel_Booking.webui.Models
@@ -6,9 +7,11 @@ namespace Hotel_Booking.webui.Models
     public class Product
     {
         public int ProductId { get; set; }
+        [Required]
+        [StringLength(60,MinimumLength =3,ErrorMessage ="Ürün ismi 3-60 karakter arasinda olmalidir.")]
         public string Name { get; set; }
         public string City { get; set; }
-        public double Price { get; set; }
+        public double? Price { get; set; }
         public bool IsApproved { get; set; }
         public string ImageUrl { get; set; }
         public string ReservedDate { get; set; }
@@ -17,7 +20,7 @@ namespace Hotel_Booking.webui.Models
         public string Room { get; set; }
         public int NumberOfPeople { get; set; }
         public int NumberOfChildren { get; set; }
-        public DateTime ArrivalDateTime => DateTime.ParseExact($"{ArrivalDate}", "MM/dd/yyyy", CultureInfo.GetCultureInfo("en-US"));
-        public DateTime DepartureDateTime => DateTime.ParseExact($"{DepartureDate}", "MM/dd/yyyy", CultureInfo.GetCultureInfo("en-US"));
+        // public DateTime ArrivalDateTime => DateTime.ParseExact($"{ArrivalDate}", "MM/dd/yyyy", CultureInfo.GetCultureInfo("en-US"));
+        // public DateTime DepartureDateTime => DateTime.ParseExact($"{DepartureDate}", "MM/dd/yyyy", CultureInfo.GetCultureInfo("en-US"));
     }
 }

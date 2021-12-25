@@ -123,12 +123,27 @@ namespace Hotel_Booking.webui.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(new Product());
         }
         [HttpPost]
         public IActionResult Create(Product p)
         {
-            ProductRepository.AddProduct(p);
+            if (ModelState.IsValid)
+            {
+                ProductRepository.AddProduct(p);
+                return RedirectToAction("Index");
+            }
+            return View(p);
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            return View(ProductRepository.GetProductById(id));
+        }
+        [HttpPost]
+        public IActionResult Edit(Product p)
+        {
+            ProductRepository.EditProduct(p);
             return RedirectToAction("Index");
         }
     }
