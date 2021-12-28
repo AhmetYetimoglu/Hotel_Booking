@@ -11,6 +11,10 @@ namespace data.Concrete.EfCore
         {
             optionsBuilder.UseSqlite("Data Source = shopDb");
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductModel>()
+            .HasKey(c=> new {c.ProductId});
+        }
     }
 }

@@ -24,23 +24,29 @@
     </div>
 </div> *@
 <div class="navbar bg-danger navbar-dark bg-dark navbar-expand-sm">
-        <div class="container">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="/home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/product" class="nav-link">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/product/create" class="nav-link">Add Product</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Link 3</a>
-                </li>
-            </ul>
-        </div>
+    <div class="container">
+        <ul class="navbar-nav">
+            @* <li class="nav-item mr-auto">
+                <a href="/home" class="nav-link">Home</a>
+            </li> *@
+            <li class="nav-item">
+                <a asp-controller="home" asp-action="index" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a asp-controller="shop" asp-action="index" class="nav-link">Products</a>
+            </li>
+            @* <li class="nav-item">
+                <a href="/product/create" class="nav-link">Add Product</a>
+            </li> *@
+            <li class="nav-item">
+                <a asp-controller="admin" asp-action="createproduct" class="nav-link">Add Product</a>
+            </li>
+            <li class="nav-item">
+                <a asp-controller="admin" asp-action="productlist" class="nav-link">Admin Products</a>
+            </li>
+        </ul>
     </div>
+</div>
 <div class="header-top">
     <div class="container">
         <div class="head-logo">

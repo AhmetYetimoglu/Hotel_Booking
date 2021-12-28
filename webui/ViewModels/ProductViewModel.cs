@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Hotel_Booking.webui.Models;
+using entity;
 
 public class ProductViewModel
 {

@@ -1,0 +1,17 @@
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\business.deps.json
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\business.dll
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\ref\business.dll
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\business.pdb
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\data.dll
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\entity.dll
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\entity.pdb
+C:\Users\Ahmet\Desktop\Proje\business\bin\Debug\net5.0\data.pdb
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.csproj.AssemblyReference.cache
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.AssemblyInfoInputs.cache
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.AssemblyInfo.cs
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.csproj.CopyComplete
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.dll
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\ref\business.dll
+C:\Users\Ahmet\Desktop\Proje\business\obj\Debug\net5.0\business.pdb

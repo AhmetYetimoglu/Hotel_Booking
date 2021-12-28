@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Hotel_Booking.webui.Data;
-using Hotel_Booking.webui.Models;
+using business.Abstract;
+using data.Abstract;
+using entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -11,6 +12,12 @@ namespace Hotel_Booking.webui.Controllers
     // localhost:5000/home
     public class HomeController:Controller
     {
+        private IProductService _productService;
+        
+        public HomeController(IProductService productService)
+        {
+            this._productService = productService;
+        }
         // localhost:5000/index
         [HttpGet]
          public IActionResult Index()

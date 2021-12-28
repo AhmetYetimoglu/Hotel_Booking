@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Hotel_Booking.webui.Data;
-using Hotel_Booking.webui.Models;
+using business.Abstract;
+using data.Abstract;
+using entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -9,6 +10,12 @@ namespace Hotel_Booking.webui.Controllers
 {
     public class ProductController:Controller
     {
+        private IProductService _productService;
+        
+        public ProductController(IProductService productService)
+        {
+            this._productService = productService;
+        }
         // localhost:5000/index
          public IActionResult Index()
         {
@@ -33,20 +40,16 @@ namespace Hotel_Booking.webui.Controllers
             children.Add(new SelectListItem() {Text="6", Value = "6"});
             ViewBag.Children = children;
 
-            // Console.WriteLine(model.Name);
-            // Console.WriteLine(model.ArrivalDate);
-            // Console.WriteLine(model.DepartureDate);
-            // Console.WriteLine(model.Room);
-            // Console.WriteLine(model.NumberOfPeople);
-            // Console.WriteLine(model.NumberOfChildren);
-            List<Product> _products = new List<Product>();
-            _products = ProductRepository.Products;
-            var productViewModel = new ProductViewModel()
-            {
-                Products = _products
-            };
+            
+            // List<Product> _products = new List<Product>();
+            // _products = ProductRepository.Products;
+            // var productViewModel = new ProductViewModel()
+            // {
+            //     Products = _products
+            // };
 
-            return View(productViewModel);
+            // return View(productViewModel);
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -84,22 +87,29 @@ namespace Hotel_Booking.webui.Controllers
             children.Add(new SelectListItem() {Text="6", Value = "6"});
             ViewBag.Children = children;
 
-            List<Product> _products = new List<Product>();
+            // List<Product> _products = new List<Product>();
 
-            for (int i = 0; i < ProductRepository.Products.Count; i++)
-            {
-                if(model.Name == ProductRepository.Products[i].Name)
-                {
-                    _products.Add(ProductRepository.Products[i]);
-                }
-                if(model.Name == ProductRepository.Products[i].City)
-                {
-                    _products.Add(ProductRepository.Products[i]);
-                }
-            }
+            // for (int i = 0; i < ProductRepository.Products.Count; i++)
+            // {
+            //     if(model.Name == ProductRepository.Products[i].Name)
+            //     {
+            //         _products.Add(ProductRepository.Products[i]);
+            //     }
+            //     if(model.Name == ProductRepository.Products[i].City)
+            //     {
+            //         _products.Add(ProductRepository.Products[i]);
+            //     }
+            // }
+            // var productViewModel = new ProductViewModel()
+            // {
+            //     Products = _products
+            // };
+
+            // return View(productViewModel);
+
             var productViewModel = new ProductViewModel()
             {
-                Products = _products
+                Products = _productService.GetAll()
             };
 
             return View(productViewModel);
@@ -118,7 +128,9 @@ namespace Hotel_Booking.webui.Controllers
         // localhost:5000/home/details/2
         public IActionResult Details(int id)
         {
-            return View(ProductRepository.GetProductById(id));
+            // return View(ProductRepository.GetProductById(id));
+
+            return View();
         }
         [HttpGet]
         public IActionResult Create()
@@ -128,29 +140,33 @@ namespace Hotel_Booking.webui.Controllers
         [HttpPost]
         public IActionResult Create(Product p)
         {
-            if (ModelState.IsValid)
-            {
-                ProductRepository.AddProduct(p);
-                return RedirectToAction("Index");
-            }
-            return View(p);
+            // if (ModelState.IsValid)
+            // {
+            //     ProductRepository.AddProduct(p);
+            //     return RedirectToAction("Index");
+            // }
+            // return View(p);
+
+            return View();
         }
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            return View(ProductRepository.GetProductById(id));
+            // return View(ProductRepository.GetProductById(id));
+            return View();
         }
         [HttpPost]
         public IActionResult Edit(Product p)
         {
-            ProductRepository.EditProduct(p);
-            return RedirectToAction("Index");
+            // ProductRepository.EditProduct(p);
+            // return RedirectToAction("Index");
+            return View();
         }
         [HttpPost]
 
         public IActionResult Delete(int ProductId)
         {
-            ProductRepository.DeleteProduct(ProductId);
+            // ProductRepository.DeleteProduct(ProductId);
             return RedirectToAction("Index");
         }
     }
