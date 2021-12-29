@@ -40,10 +40,10 @@ namespace data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("NumberOfChildren")
+                    b.Property<int>("NumberOfChildren")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("NumberOfPeople")
+                    b.Property<int>("NumberOfPeople")
                         .HasColumnType("INTEGER");
 
                     b.Property<double?>("Price")
@@ -55,34 +55,12 @@ namespace data.Migrations
                     b.Property<string>("Room")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("entity.ProductModel", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ProductId1")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("ProductId1");
-
-                    b.ToTable("ProductModel");
-                });
-
-            modelBuilder.Entity("entity.ProductModel", b =>
-                {
-                    b.HasOne("entity.Product", "Product")
-                        .WithMany("ProductModel")
-                        .HasForeignKey("ProductId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

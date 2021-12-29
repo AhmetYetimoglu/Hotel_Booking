@@ -230,3 +230,7 @@ C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\business.pdb
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\Details.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\List.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\ProductList.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\CreateProduct.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Newtonsoft.Json.dll

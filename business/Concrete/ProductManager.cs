@@ -33,10 +33,18 @@ namespace business.Concrete
         {
             return _productRepository.GetById(id);
         }
+        public List<Product> GetProductCity(string city)
+        {
+            return _productRepository.GetProductCity(city);
+        }
 
+        public Product GetProductDetails(string url)
+        {
+            return _productRepository.GetProductDetails(url);
+        }
         public void Update(Product entity)
         {
-            throw new System.NotImplementedException();
+            _productRepository.Update(entity);
         }
     }
 }

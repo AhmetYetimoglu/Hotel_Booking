@@ -55,13 +55,23 @@ namespace webui
             // localhost:5000/product/list/3
             app.UseEndpoints(endpoints =>
             {
-                //url products girilirse Shop controllerının list metotuna gönderilir
                 endpoints.MapControllerRoute(
-                    name: "products",
-                    pattern: "products",
-                    defaults: new {controller="Shop",action="list"}
+                    name: "adminproductlist",
+                    pattern: "admin/products",
+                    defaults: new {controller="Admin",action="ProductList"}
                 );
-
+                endpoints.MapControllerRoute(
+                    name: "adminproductlist",
+                    pattern: "admin/products/{id?}",
+                    defaults: new {controller="Admin",action="Edit"}
+                );
+                // endpoints.MapControllerRoute(
+                //     name: "productdetails",
+                //     pattern: "{url}",
+                //     defaults: new {controller="Shop",action="details"}
+                // );
+                //url products girilirse Shop controllerının list metotuna gönderilir
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern:"{controller=Home}/{action=Index}/{id?}"

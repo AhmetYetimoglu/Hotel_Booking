@@ -13,7 +13,7 @@ namespace data.Concrete.EfCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProductModel>()
+            modelBuilder.Entity<Product>()
             .HasKey(c=> new {c.ProductId});
         }
     }

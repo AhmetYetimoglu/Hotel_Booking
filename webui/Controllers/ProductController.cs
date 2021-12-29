@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using business.Abstract;
-using data.Abstract;
 using entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

@@ -54,7 +54,7 @@ namespace Hotel_Booking.webui.Controllers
             if(ModelState.IsValid)
             {
                 Product obj = new Product(){Name = model.Products[0].Name, ArrivalDate = model.Products[0].ArrivalDate, DepartureDate = model.Products[0].DepartureDate, Room = model.Products[0].Room, NumberOfPeople = model.Products[0].NumberOfPeople, NumberOfChildren = model.Products[0].NumberOfChildren};
-                return RedirectToAction("list","Product", obj);
+                return RedirectToAction("list","Shop", obj);
             }
             return View();
         }
@@ -83,29 +83,11 @@ namespace Hotel_Booking.webui.Controllers
             children.Add(new SelectListItem() {Text="6", Value = "6"});
             ViewBag.Children = children;
 
-            // List<Product> _products = new List<Product>();
-
-            // for (int i = 0; i < ProductRepository.Products.Count; i++)
-            // {
-            //     if(model.Name == ProductRepository.Products[i].Name)
-            //     {
-            //         _products.Add(ProductRepository.Products[i]);
-            //     }
-            //     if(model.Name == ProductRepository.Products[i].City)
-            //     {
-            //         _products.Add(ProductRepository.Products[i]);
-            //     }
-            // }
-            // var productViewModel = new ProductViewModel()
-            // {
-            //     Products = _products
-            // };
-
-            // return View(productViewModel);
+            List<Product> _products = new List<Product>();
 
             var productViewModel = new ProductViewModel()
             {
-                Products = _productService.GetAll()
+                Products = _productService.GetProductCity(model.Name)
             };
 
             return View(productViewModel);
@@ -117,18 +99,18 @@ namespace Hotel_Booking.webui.Controllers
             if(ModelState.IsValid)
             {
                 Product obj = new Product(){Name = model.Products[0].Name, ArrivalDate = model.Products[0].ArrivalDate, DepartureDate = model.Products[0].DepartureDate, Room = model.Products[0].Room, NumberOfPeople = model.Products[0].NumberOfPeople, NumberOfChildren = model.Products[0].NumberOfChildren};
-                return RedirectToAction("list","Product", obj);
+                return RedirectToAction("list","Shop", obj);
             }
             return View();
         }
         // localhost:5000/home/details/2
-        public IActionResult Details(int? id)
+        public IActionResult Details(string url)
         {
-            if (id==null)
+            if (url==null)
             {
                 return NotFound();
             }
-            Product product = _productService.GetById((int) id);
+            Product product = _productService.GetProductDetails(url);
             if (product == null)
             {
                 return NotFound();

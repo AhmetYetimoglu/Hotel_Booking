@@ -23,7 +23,7 @@ namespace data.Concrete.EfCore
 
         public void Delete(TEntity entity)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
                 context.Set<TEntity>().Remove(entity);
                 context.SaveChanges();

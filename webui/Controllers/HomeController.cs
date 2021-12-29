@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using business.Abstract;
-using data.Abstract;
 using entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -58,7 +55,7 @@ namespace Hotel_Booking.webui.Controllers
             if(ModelState.IsValid)
             {
                 Product obj = new Product(){Name = model.Products[0].Name, ArrivalDate = model.Products[0].ArrivalDate, DepartureDate = model.Products[0].DepartureDate, Room = model.Products[0].Room, NumberOfPeople = model.Products[0].NumberOfPeople, NumberOfChildren = model.Products[0].NumberOfChildren};
-                return RedirectToAction("list","Product", obj);
+                return RedirectToAction("list","Shop", obj);
             }
             return View();
         }
