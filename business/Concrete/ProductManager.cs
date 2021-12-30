@@ -53,14 +53,15 @@ namespace business.Concrete
             _productRepository.Update(entity);
         }
 
-        public string ErrorMessage { get; set;}
+        public List<string> ErrorMessage { get; set;}
 
         public bool Validation(Product entity)
         {
+            ErrorMessage = new List<string>();
             var IsValid = true;
             if (string.IsNullOrEmpty(entity.Name))
             {
-                ErrorMessage += "Hotel ismi girmelisiniz.\n";
+                ErrorMessage.Add("Hotel ismi girmelisiniz.");
                 IsValid=false;
             }
             // if (string.IsNullOrEmpty(entity.City))
@@ -69,7 +70,7 @@ namespace business.Concrete
             // }
             if(entity.Price<=0)
             {
-                ErrorMessage += "Ürünün fiyati negatif veya 0 olamaz.\n";
+                ErrorMessage.Add("Ürünün fiyati negatif veya 0 olamaz.");
                 IsValid=false;
             }
 

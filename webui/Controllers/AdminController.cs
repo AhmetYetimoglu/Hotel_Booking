@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using business.Abstract;
 using entity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,9 @@ namespace webui.Controllers
             
             if(_productService.Create(entity))
             {
-                CreateMessage("kayit eklendi","susccess");
+                List<String> mesaj = new List<string>();
+                mesaj.Add("kayit eklendi");
+                CreateMessage(mesaj,"success");
 
                 return RedirectToAction("ProductList");
             }
@@ -83,13 +86,13 @@ namespace webui.Controllers
             
             _productService.Update(entity);
 
-            var msg = new AlertMessage()
-            {
-               Message = $"{entity.Name} isimli ürün güncellendi.",
-               AlertType = "success"
-            };
+            // var msg = new AlertMessage()
+            // {
+            //    Message = $"{entity.Name} isimli ürün güncellendi.",
+            //    AlertType = "success"
+            // };
             
-            TempData["message"] = JsonConvert.SerializeObject(msg);
+            // TempData["message"] = JsonConvert.SerializeObject(msg);
 
             return RedirectToAction("ProductList");
         }
@@ -101,16 +104,16 @@ namespace webui.Controllers
             {
                 _productService.Delete(entity);
             }
-            var msg = new AlertMessage()
-            {
-               Message = $"{entity.Name} isimli ürün silindi.",
-               AlertType = "danger"
-            };
+            // var msg = new AlertMessage()
+            // {
+            //    Message = $"{entity.Name} isimli ürün silindi.",
+            //    AlertType = "danger"
+            // };
             
-            TempData["message"] = JsonConvert.SerializeObject(msg);
+            // TempData["message"] = JsonConvert.SerializeObject(msg);
             return RedirectToAction("ProductList");
         }
-        private void CreateMessage(string message,string alerttype)
+        private void CreateMessage(List<string> message,string alerttype)
         {
             var msg = new AlertMessage()
             {
