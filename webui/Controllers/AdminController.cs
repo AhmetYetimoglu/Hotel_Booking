@@ -37,18 +37,14 @@ namespace webui.Controllers
                 ImageUrl = model.ImageUrl
             };
             
-            _productService.Create(entity);
-
-            var msg = new AlertMessage()
+            if(_productService.Create(entity))
             {
-               Message = $"{entity.Name} isimli ürün eklendi.",
-               AlertType = "success"
-            };
-            
-            TempData["message"] = JsonConvert.SerializeObject(msg);
-            
+                CreateMessage("kayit eklendi","susccess");
 
-            return RedirectToAction("ProductList");
+                return RedirectToAction("ProductList");
+            }
+            CreateMessage(_productService.ErrorMessage,"danger");
+            return View(model);
         }
         [HttpGet]
         public IActionResult Edit(int? id)
@@ -113,6 +109,16 @@ namespace webui.Controllers
             
             TempData["message"] = JsonConvert.SerializeObject(msg);
             return RedirectToAction("ProductList");
+        }
+        private void CreateMessage(string message,string alerttype)
+        {
+            var msg = new AlertMessage()
+            {
+            Message = message,
+            AlertType = alerttype
+            };
+            
+            TempData["message"] = JsonConvert.SerializeObject(msg);
         }
     }
 }

@@ -65,6 +65,17 @@
     <div class="container">
         <h1 class="h3">Create Product</h1>
         <hr>
+        @if (TempData["message"]!=null)
+        {
+            var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-@message.AlertType">
+                        @message.Message
+                    </div>
+                </div>
+            </div>
+        }
         <div class="row">
             <div class="col-md-12">
                 <form asp-controller="Admin" asp-action="Edit" method="POST">

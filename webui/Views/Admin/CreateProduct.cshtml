@@ -10,7 +10,6 @@
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="~/css/styles.css?v=1.6" rel="stylesheet">
 <!-- js -->
@@ -65,6 +64,17 @@
     <div class="container">
         <h1 class="h3">Create Product</h1>
         <hr>
+        @if (TempData["message"]!=null)
+        {
+            var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-@message.AlertType">
+                        @message.Message
+                    </div>
+                </div>
+            </div>
+        }
         <div class="row">
             <div class="col-md-12">
                 <form asp-controller="Admin" asp-action="CreateProduct" method="POST">

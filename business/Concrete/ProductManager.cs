@@ -13,10 +13,16 @@ namespace business.Concrete
         {
             _productRepository = productRepository;
         }
-        public void Create(Product entity)
+
+        public bool Create(Product entity)
         {
             // iş kuralları uygula
-            _productRepository.Create(entity);
+            if (Validation(entity))
+            {
+                _productRepository.Create(entity);
+                return true;
+            }
+            return false;
         }
 
         public void Delete(Product entity)
@@ -45,6 +51,29 @@ namespace business.Concrete
         public void Update(Product entity)
         {
             _productRepository.Update(entity);
+        }
+
+        public string ErrorMessage { get; set;}
+
+        public bool Validation(Product entity)
+        {
+            var IsValid = true;
+            if (string.IsNullOrEmpty(entity.Name))
+            {
+                ErrorMessage += "Hotel ismi girmelisiniz.\n";
+                IsValid=false;
+            }
+            // if (string.IsNullOrEmpty(entity.City))
+            // {
+            //     ErrorMessage += "Hotelin bulunduğu şehri girmelisiniz.\n";
+            // }
+            if(entity.Price<=0)
+            {
+                ErrorMessage += "Ürünün fiyati negatif veya 0 olamaz.\n";
+                IsValid=false;
+            }
+
+            return IsValid;
         }
     }
 }

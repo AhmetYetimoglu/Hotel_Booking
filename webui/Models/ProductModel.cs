@@ -9,7 +9,6 @@ namespace webui.Models
     public class ProductModel
     {
         public int ProductId { get; set; }
-        [Display(Name="Name",Prompt ="Enter Product Name")]
         public string Name { get; set; }
         public string Url { get; set; }
         public string City { get; set; }
