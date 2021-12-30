@@ -64,13 +64,52 @@ namespace business.Concrete
                 ErrorMessage.Add("Hotel ismi girmelisiniz.");
                 IsValid=false;
             }
-            // if (string.IsNullOrEmpty(entity.City))
-            // {
-            //     ErrorMessage += "Hotelin bulunduğu şehri girmelisiniz.\n";
-            // }
-            if(entity.Price<=0)
+            if (string.IsNullOrEmpty(entity.City))
             {
-                ErrorMessage.Add("Ürünün fiyati negatif veya 0 olamaz.");
+                ErrorMessage.Add("Hotelin bulunduğu şehri girmelisiniz.");
+            }
+            if(entity.AdultPrice<=0)
+            {
+                ErrorMessage.Add("AdultPrice negatif veya 0 olamaz.");
+                IsValid=false;
+            }
+
+            return IsValid;
+        }
+        
+
+        public bool HomePageControl(Product entity)
+        {
+            // iş kuralları uygula
+            if (HomePageValidation(entity))
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public bool HomePageValidation(Product entity)
+        {
+            ErrorMessage = new List<string>();
+            var IsValid = true;
+            if ((string.IsNullOrEmpty(entity.Name))||(string.IsNullOrEmpty(entity.City)))
+            {
+                ErrorMessage.Add("Hotel ya da şehir ismi girmelisiniz.");
+                IsValid=false;
+            }
+            if (string.IsNullOrEmpty(entity.ArrivalDate))
+            {
+                ErrorMessage.Add("Check-in boş olamaz.");
+                IsValid=false;
+            }
+            if (string.IsNullOrEmpty(entity.DepartureDate))
+            {
+                ErrorMessage.Add("Check-out boş olamaz.");
+                IsValid=false;
+            }
+            if((entity.NumberOfPeople+entity.NumberOfChildren) == 0)
+            {
+                ErrorMessage.Add("Lütfen en az bir çocuk ya da yetişkin girin.");
                 IsValid=false;
             }
 

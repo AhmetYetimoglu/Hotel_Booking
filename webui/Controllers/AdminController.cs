@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using business.Abstract;
 using entity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using webui.Models;
@@ -33,8 +36,12 @@ namespace webui.Controllers
             var entity = new Product()
             {
                 Name = model.Name,
+                City = model.City,
+                ArrivalDate = model.ArrivalDate,
+                DepartureDate = model.DepartureDate,
                 Url = model.Url,
-                Price = model.Price,
+                AdultPrice = model.AdultPrice,
+                ChildPrice = model.ChildPrice,
                 ImageUrl = model.ImageUrl
             };
             
@@ -65,14 +72,19 @@ namespace webui.Controllers
             {
                 ProductId = entity.ProductId,
                 Name = entity.Name,
+                City = entity.City,
+                ArrivalDate = entity.ArrivalDate,
+                DepartureDate = entity.DepartureDate,
                 Url = entity.Url,
-                Price = entity.Price,
-                ImageUrl = entity.ImageUrl
+                AdultPrice = entity.AdultPrice,
+                ChildPrice = entity.ChildPrice,
+                ImageUrl = entity.ImageUrl,
+                IsApproved = entity.IsApproved
             };
             return View(model);
         }
         [HttpPost]
-        public IActionResult Edit(ProductModel model)
+        public async Task<IActionResult> Edit(ProductModel model,IFormFile file)
         {
             var entity = _productService.GetById(model.ProductId);
             if (entity ==null)
@@ -80,20 +92,31 @@ namespace webui.Controllers
                 return NotFound();
             }
             entity.Name = model.Name;
+            entity.City = model.City;
+            entity.ArrivalDate = model.ArrivalDate;
+            entity.DepartureDate = model.DepartureDate;
             entity.Url = model.Url;
-            entity.Price = model.Price;
-            entity.ImageUrl = model.ImageUrl;
+            entity.AdultPrice = model.AdultPrice;
+            entity.ChildPrice = model.ChildPrice;
+            entity.IsApproved = model.IsApproved;
+            //resim upload
+            if(file!=null)
+            {
+                var exntention = Path.GetExtension(file.FileName);
+                var randomName = string.Format($"{Guid.NewGuid()}.{exntention}");
+                entity.ImageUrl = randomName;
+                var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\images",randomName);
+
+                using(var stream = new FileStream(path,FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+            }
             
             _productService.Update(entity);
-
-            // var msg = new AlertMessage()
-            // {
-            //    Message = $"{entity.Name} isimli ürün güncellendi.",
-            //    AlertType = "success"
-            // };
-            
-            // TempData["message"] = JsonConvert.SerializeObject(msg);
-
+            List<String> mesaj = new List<string>();
+            mesaj.Add(entity.Name+" isimli ürün güncellendi.");
+            CreateMessage(mesaj,"success");
             return RedirectToAction("ProductList");
         }
         public IActionResult DeleteProduct(int productId)
@@ -104,13 +127,9 @@ namespace webui.Controllers
             {
                 _productService.Delete(entity);
             }
-            // var msg = new AlertMessage()
-            // {
-            //    Message = $"{entity.Name} isimli ürün silindi.",
-            //    AlertType = "danger"
-            // };
-            
-            // TempData["message"] = JsonConvert.SerializeObject(msg);
+            List<String> mesaj = new List<string>();
+            mesaj.Add(entity.Name+" isimli ürün silindi.");
+            CreateMessage(mesaj,"danger");
             return RedirectToAction("ProductList");
         }
         private void CreateMessage(List<string> message,string alerttype)

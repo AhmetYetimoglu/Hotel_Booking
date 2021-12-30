@@ -64,10 +64,6 @@ namespace Hotel_Booking.webui.Controllers
         [HttpGet]
         public IActionResult list(Product model)
         {
-            List<SelectListItem> rooms = new List<SelectListItem>();
-            rooms.Add(new SelectListItem() {Text="Economy", Value = "Economy"});
-            rooms.Add(new SelectListItem() {Text="Business", Value = "Business"});
-            ViewBag.Rooms = rooms;
             List<SelectListItem> peoples = new List<SelectListItem>();
             peoples.Add(new SelectListItem() {Text="1", Value = "1"});
             peoples.Add(new SelectListItem() {Text="2", Value = "2"});
@@ -77,6 +73,7 @@ namespace Hotel_Booking.webui.Controllers
             peoples.Add(new SelectListItem() {Text="6", Value = "6"});
             ViewBag.Peoples = peoples;
             List<SelectListItem> children = new List<SelectListItem>();
+            children.Add(new SelectListItem() {Text="0", Value = "0"});
             children.Add(new SelectListItem() {Text="1", Value = "1"});
             children.Add(new SelectListItem() {Text="2", Value = "2"});
             children.Add(new SelectListItem() {Text="3", Value = "3"});

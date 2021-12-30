@@ -15,15 +15,15 @@ namespace data.Migrations
                     Name = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
-                    Price = table.Column<double>(nullable: true),
+                    ChildPrice = table.Column<double>(nullable: true),
+                    AdultPrice = table.Column<double>(nullable: true),
                     IsApproved = table.Column<bool>(nullable: false),
                     ImageUrl = table.Column<string>(nullable: true),
-                    ReservedDate = table.Column<string>(nullable: true),
                     ArrivalDate = table.Column<string>(nullable: true),
                     DepartureDate = table.Column<string>(nullable: true),
                     Room = table.Column<string>(nullable: true),
-                    NumberOfPeople = table.Column<int>(nullable: false),
-                    NumberOfChildren = table.Column<int>(nullable: false)
+                    NumberOfPeople = table.Column<int>(nullable: true),
+                    NumberOfChildren = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -20,11 +20,11 @@ namespace data.Concrete.EfCore
             context.SaveChanges();
         }
         private static Product[] Products = {
-            new Product(){Name = "Deneme1",Url="Deneme1",City="İzmir",Price =3000,ImageUrl="hotel_3.jpg",IsApproved=true},
-            new Product(){Name = "Deneme2",Url="Deneme2",City="Antalya",Price =5000,ImageUrl="hotel_5.jpg",IsApproved=true},
-            new Product(){Name = "Deneme3",Url="Deneme3",City="İzmir",Price =7000,ImageUrl="hotel_4.jpg",IsApproved=true},
-            new Product(){Name = "Deneme4",Url="Deneme4",City="Antalya",Price =9000,ImageUrl="hotel_1.jpg",IsApproved=true},
-            new Product(){Name = "Deneme5",Url="Deneme5",City="Antalya",Price =10000,ImageUrl="hotel_2.jpg",IsApproved=true},
+            new Product(){Name = "Deneme1",Url="Deneme1",City="İzmir",AdultPrice =3000,ChildPrice = 1000,ImageUrl="hotel_3.jpg",IsApproved=true},
+            new Product(){Name = "Deneme2",Url="Deneme2",City="Antalya",AdultPrice =5000,ChildPrice = 1500,ImageUrl="hotel_5.jpg",IsApproved=true},
+            new Product(){Name = "Deneme3",Url="Deneme3",City="İzmir",AdultPrice =7000,ChildPrice = 2000,ImageUrl="hotel_4.jpg",IsApproved=true},
+            new Product(){Name = "Deneme4",Url="Deneme4",City="Antalya",AdultPrice =9000,ChildPrice = 2400,ArrivalDate="17/05/2021",DepartureDate="22/05/2021",ImageUrl="hotel_1.jpg",IsApproved=true},
+            new Product(){Name = "Deneme5",Url="Deneme5",City="Antalya",AdultPrice =10000,ChildPrice = 3000,ImageUrl="hotel_2.jpg",IsApproved=true},
         };
 
     }

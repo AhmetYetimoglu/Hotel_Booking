@@ -68,57 +68,92 @@
         @if (TempData["message"]!=null)
         {
             var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-@message.AlertType">
-                        @message.Message
+            var strlist = message.Message;
+            foreach (var item in strlist)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-@message.AlertType">
+                            @item
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
-        <div class="row">
-            <div class="col-md-12">
-                <form asp-controller="Admin" asp-action="Edit" method="POST">
-                    <input type="hidden" name="ProductId" value="@Model.ProductId">
-                    <div class="form-group row">
-                        <label class="col-sm-1 col-form-label" asp-for="Name"></label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="Name">
-                        </div>
-                    </div>
-                    <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="Url"></label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="Url">
-                        </div>
-                    </div>
-                    <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="Price">Price</label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="Price">
-                        </div>
-                    </div>
-                    <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="ImageUrl">ImageUrl</label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="ImageUrl">
-                        </div>
-                    </div>
-                    <div class="form-group row" style="margin-top: 25px;">
-                        <div class="offset-sm-1">
-                            <button type="submit" class="btn btn-primary">Save Product</button>
-                        </div>
+                <form asp-controller="Admin" asp-action="Edit" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="hidden" name="ProductId" value="@Model.ProductId">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" asp-for="Name"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="Url"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="Url">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="City"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="City">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="ArrivalDate"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="ArrivalDate">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="DepartureDate"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="DepartureDate">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="AdultPrice"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="AdultPrice">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="ChildPrice"></label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" asp-for="ChildPrice">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <label class="col-sm-2 col-form-label" asp-for="ImageUrl"></label>
+                                <div class="col-sm-7">
+                                    <input type="hidden" asp-for="ImageUrl">
+                                    <img src="~/images/@Model.ImageUrl" width="120"/>
+                                    <input type="file" name="file">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="margin-top: 25px;">
+                                <div class="offset-sm-1">
+                                    <button type="submit" class="btn btn-primary">Save Product</button>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                                <input asp-for="IsApproved" type="checkbox" class="custom-control-input">
+                                <label asp-for="IsApproved" class="custom-control-label"></label>
+                            </div>
+                        </div>
                     </div>
                 </form>
-            </div>
-        </div>
+            
     </div>
 </main>
 <!-- footer -->
-<div style="position: fixed; bottom: 0; left: 0; width: 100%">
-	@await Html.PartialAsync("_footer")
-</div>
+@await Html.PartialAsync("_footer")
 <!-- //footer -->
 </body>
 </html>

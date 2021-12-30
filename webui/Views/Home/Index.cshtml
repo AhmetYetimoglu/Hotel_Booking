@@ -64,6 +64,21 @@
 <!-- banner -->
 	<div class="banner">
 		@await Html.PartialAsync("_navbar")
+		@if (TempData["message"]!=null)
+        {
+            var message = JsonConvert.DeserializeObject<AlertMessage>(TempData["message"] as String);
+            var strlist = message.Message;
+            foreach (var item in strlist)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-@message.AlertType">
+                            @item
+                        </div>
+                    </div>
+                </div>
+            }
+        }
 		<div class="banner-info">
 			<div class="container">
 				<h1>Book Your Best Trip</h1>
@@ -79,7 +94,7 @@
 										<div class="booking-form">
 											<div class="online_reservation">
 												<div class="b_room">
-												@using (Html.BeginForm("index","Home",FormMethod.Post))
+												@using (Html.BeginForm("index","Shop",FormMethod.Post))
 												{
 														<div class="booking_room">
 															<div class="reservation">
@@ -123,13 +138,6 @@
 																			<!----------start section_room----------->
 																			<div class="section_room">
 																				@Html.DropDownListFor(m=>m.Products[0].NumberOfChildren, new SelectList(ViewBag.Children,"Value","Text"), new {@class = "frm-field required"})
-																			</div>	
-																	</li>
-																	<li class="span1_of_1 adult">
-																			<h5>Class</h5>
-																			<!----------start section_room----------->
-																			<div class="section_room">
-																				@Html.DropDownListFor(m=>m.Products[0].Room, new SelectList(ViewBag.rooms,"Value","Text"), new {@class = "frm-field required"})
 																			</div>	
 																	</li>
 																		<div class="clearfix"></div>

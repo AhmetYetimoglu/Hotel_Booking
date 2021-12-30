@@ -9,7 +9,7 @@ using data.Concrete.EfCore;
 namespace data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20211228200843_InitialCreate")]
+    [Migration("20211230194821_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,8 +24,14 @@ namespace data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<double?>("AdultPrice")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("ArrivalDate")
                         .HasColumnType("TEXT");
+
+                    b.Property<double?>("ChildPrice")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("City")
                         .HasColumnType("TEXT");
@@ -42,17 +48,11 @@ namespace data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("NumberOfChildren")
+                    b.Property<int?>("NumberOfChildren")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("NumberOfPeople")
+                    b.Property<int?>("NumberOfPeople")
                         .HasColumnType("INTEGER");
-
-                    b.Property<double?>("Price")
-                        .HasColumnType("REAL");
-
-                    b.Property<string>("ReservedDate")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Room")
                         .HasColumnType("TEXT");

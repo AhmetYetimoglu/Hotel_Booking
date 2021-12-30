@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-@message.AlertType">
-                        @message.Message
+                        @message.Message[0]
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                                     <td>@item.ProductId</td>
                                     <td><img src="~/images/@item.ImageUrl" width="120"></td>
                                     <td>@item.Name</td>
-                                    <td>@item.Price</td>
+                                    <td>@item.AdultPrice</td>
                                     <td>
                                         @if (item.IsApproved)
                                         {

@@ -7,5 +7,7 @@ namespace business.Abstract
         List<string> ErrorMessage{ get; set;}
 
         bool Validation(T entity);
+
+        bool HomePageValidation(T entity);
     }
 }

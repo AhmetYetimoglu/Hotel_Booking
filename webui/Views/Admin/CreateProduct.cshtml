@@ -83,31 +83,49 @@
             <div class="col-md-12">
                 <form asp-controller="Admin" asp-action="CreateProduct" method="POST">
                     <div class="form-group row">
-                        <label class="col-sm-1 col-form-label" asp-for="Name"></label>
+                        <label class="col-sm-2 col-form-label" asp-for="Name"></label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control" asp-for="Name">
                         </div>
                     </div>
                     <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="City"></label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="City">
-                        </div>
-                    </div>
-                    <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="Url"></label>
+                        <label class="col-sm-2 col-form-label" asp-for="Url"></label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control" asp-for="Url">
                         </div>
                     </div>
                     <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="Price">Price</label>
+                        <label class="col-sm-2 col-form-label" asp-for="City"></label>
                         <div class="col-sm-7">
-                            <input type="text" class="form-control" asp-for="Price">
+                            <input type="text" class="form-control" asp-for="City">
                         </div>
                     </div>
                     <div class="form-group row" style="margin-top: 25px;">
-                        <label class="col-sm-1 col-form-label" asp-for="ImageUrl">ImageUrl</label>
+                        <label class="col-sm-2 col-form-label" asp-for="ArrivalDate"></label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" asp-for="ArrivalDate">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 25px;">
+                        <label class="col-sm-2 col-form-label" asp-for="DepartureDate"></label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" asp-for="DepartureDate">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 25px;">
+                        <label class="col-sm-2 col-form-label" asp-for="AdultPrice"></label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" asp-for="AdultPrice">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 25px;">
+                        <label class="col-sm-2 col-form-label" asp-for="ChildPrice"></label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" asp-for="ChildPrice">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-top: 25px;">
+                        <label class="col-sm-2 col-form-label" asp-for="ImageUrl"></label>
                         <div class="col-sm-7">
                             <input type="text" class="form-control" asp-for="ImageUrl">
                         </div>
