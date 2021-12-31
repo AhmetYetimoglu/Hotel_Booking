@@ -12,7 +12,5 @@ namespace business.Abstract
         bool Create(Product entity);
         void Update(Product entity);
         void Delete(Product entity);
-
-        bool HomePageControl(Product entity);
     }
 }

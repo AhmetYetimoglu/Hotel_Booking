@@ -60,7 +60,7 @@ namespace webui
                 options.Cookie = new CookieBuilder
                 {
                     HttpOnly = true,
-                    Name = ".HotelBooking.Security.Cookie"
+                    Name = ".Proje.Security.Cookie"
                 };
             });
             // Bir interface'i çağırabileceğiz ve interface çağrıldığında dolu olan Repository döndürülecektir.
@@ -90,6 +90,7 @@ namespace webui
             }
             app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             // localhost:5000
             // localhost:5000/product/details/2

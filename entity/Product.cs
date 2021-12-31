@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace entity{
+﻿namespace entity{
     public class Product
     {
     public int ProductId { get; set; }
         public string? Name { get; set; }
         public string? Url { get; set; }
         public string? City { get; set; }
-        // public string? Url { get; set; }
         public double? ChildPrice {get; set; }
         public double? AdultPrice { get; set; }
         public bool IsApproved { get; set; }

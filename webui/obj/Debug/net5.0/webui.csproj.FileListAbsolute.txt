@@ -123,14 +123,12 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.TagHelpers.input.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.TagHelpers.output.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.RazorCoreGenerate.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_footer.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_header.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_navbar.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_navbarBir.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_noproduct.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_product.cshtml.g.cs
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Signup\Index.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\_Viewimports.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.RazorTargetAssemblyInfo.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.RazorTargetAssemblyInfo.cs
@@ -140,9 +138,6 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\ref\webui.dll
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.pdb
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.genruntimeconfig.cache
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\webui.csproj.CopyComplete
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\List.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\bin\Debug\net5.0\appsettings.json
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\bin\Debug\net5.0\global.json
@@ -193,7 +188,6 @@ C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\ref\webui.dll
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.pdb
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.genruntimeconfig.cache
 C:\Users\Ahmet\Desktop\Proje - Copy\webui\obj\Debug\net5.0\webui.csproj.CopyComplete
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Microsoft.Data.Sqlite.dll
@@ -234,3 +228,5 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\CreateProd
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs

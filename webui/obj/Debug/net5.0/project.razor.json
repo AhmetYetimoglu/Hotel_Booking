@@ -15634,13 +15634,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Create.cshtml",
-      "TargetPath": "Views\\Product\\Create.cshtml",
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Admin\\Edit.cshtml",
+      "TargetPath": "Views\\Admin\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Admin\\Edit.cshtml",
-      "TargetPath": "Views\\Admin\\Edit.cshtml",
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Account\\Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15649,18 +15649,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Signup\\Index.cshtml",
-      "TargetPath": "Views\\Signup\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shop\\List.cshtml",
       "TargetPath": "Views\\Shop\\List.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Index.cshtml",
-      "TargetPath": "Views\\Product\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15694,23 +15684,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\List.cshtml",
-      "TargetPath": "Views\\Product\\List.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Product\\Details.cshtml",
-      "TargetPath": "Views\\Product\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Admin\\ProductList.cshtml",
       "TargetPath": "Views\\Admin\\ProductList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
