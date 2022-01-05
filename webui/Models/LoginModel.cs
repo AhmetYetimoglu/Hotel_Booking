@@ -9,7 +9,10 @@ namespace webui.Models
     public class LoginModel
     {
         [Required]
-        public string Username { get; set; }
+        [DataType(DataType.EmailAddress)]
+        // public string Username { get; set; }
+
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

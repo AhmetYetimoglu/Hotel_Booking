@@ -12,15 +12,23 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using webui.EmailSevices;
 using webui.Identity;
 
 namespace webui
 {
     public class Startup
     {
+        //appsetting içerisindeki bilgileri almak için bir configuration tanımlıyoruz
+        private IConfiguration _configuration;
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -29,6 +37,15 @@ namespace webui
             services.AddDbContext<ApplicationContext>(optinos => optinos.UseSqlite("Data Source=shopDb"));
             services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
+            //Email servisi
+            services.AddScoped<IEmailSender,SmtpEmailSender>(i=>
+                new SmtpEmailSender(
+                    _configuration["EmailSender:Host"],
+                    _configuration.GetValue<int>("EmailSender:Port"),
+                    _configuration.GetValue<bool>("EmailSender:EnableSSL"),
+                    _configuration["EmailSender:UserName"],
+                    _configuration["EmailSender:Password"])
+            );
             services.Configure<IdentityOptions>(options=>{
                 //password
                 options.Password.RequireDigit = true;
@@ -44,7 +61,8 @@ namespace webui
 
                 // options.User.AllowedUserNameCharacters = "";
                 options.User.RequireUniqueEmail = true;
-                options.SignIn.RequireConfirmedEmail = false;
+                //Mail onaylama işlemi
+                options.SignIn.RequireConfirmedEmail = true;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
 
                 
@@ -60,7 +78,9 @@ namespace webui
                 options.Cookie = new CookieBuilder
                 {
                     HttpOnly = true,
-                    Name = ".Proje.Security.Cookie"
+                    Name = ".Proje.Security.Cookie",
+                    //Csrf atağını önleme
+                    SameSite = SameSiteMode.Strict
                 };
             });
             // Bir interface'i çağırabileceğiz ve interface çağrıldığında dolu olan Repository döndürülecektir.
@@ -97,6 +117,34 @@ namespace webui
             // localhost:5000/product/list/3
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "adminusers",
+                    pattern: "admin/user/list",
+                    defaults: new {controller="Admin",action="UserList"}
+                );
+                endpoints.MapControllerRoute(
+                    name: "adminuseredit",
+                    pattern: "admin/user/{id}",
+                    defaults: new {controller="Admin",action="UserEdit"}
+                );
+                endpoints.MapControllerRoute(
+                    name: "adminroles",
+                    pattern: "admin/role/list",
+                    defaults: new {controller="Admin",action="RoleList"}
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "adminrolecreate",
+                    pattern: "admin/role/create",
+                    defaults: new {controller="Admin",action="RoleCreate"}
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "adminroleedit",
+                    pattern: "admin/role/{id}",
+                    defaults: new {controller="Admin",action="RoleEdit"}
+                );
+
                 endpoints.MapControllerRoute(
                     name: "adminproductlist",
                     pattern: "admin/products",

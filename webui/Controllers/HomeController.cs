@@ -39,13 +39,6 @@ namespace Hotel_Booking.webui.Controllers
             children.Add(new SelectListItem() {Text="5", Value = "5"});
             children.Add(new SelectListItem() {Text="6", Value = "6"});
             ViewBag.Children = children;
-            // ViewBag
-            // ViewBag.Product ile ataması View'e yapılır
-            
-            // Model
-            
-            // ViewData
-            // ViewData["Product"] = product ile ataması yapılır.
             return View();
         }
         [HttpPost]
