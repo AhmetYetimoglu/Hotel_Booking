@@ -33,7 +33,7 @@
                 <a href="/shop/index" class="nav-link">Products</a>
             </li>
             @if(User.Identity.IsAuthenticated){
-                @if (User.IsInRole("Admin"))
+                @if (User.IsInRole("admin"))
                 {
                     <li class="nav-item">
                         <a asp-controller="admin" asp-action="createproduct" class="nav-link">Add Product</a>

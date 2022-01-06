@@ -16,7 +16,7 @@ using webui.Models;
 namespace webui.Controllers
 {
     //ahmetyetimoglu =>  admin
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="admin")]
     public class AdminController: Controller
     {
         private IProductService _productService;
