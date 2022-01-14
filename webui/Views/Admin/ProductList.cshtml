@@ -85,7 +85,9 @@
                             <td style="width: 30px;">Id</td>
                             <td style="width: 120px;">Image</td>
                             <td style="width: 30px;">Name</td>
-                            <td style="width: 20px;">Price</td>
+                            <td style="width: 30px;">City</td>
+                            <td style="width: 20px;"> Adult Price</td>
+                            <td style="width: 20px;"> Child Price</td>
                             <td style="width: 20px;">Approved</td>
                             <td style="width: 150px;"></td>
                         </tr>
@@ -99,7 +101,9 @@
                                     <td>@item.ProductId</td>
                                     <td><img src="~/images/@item.ImageUrl" width="120"></td>
                                     <td>@item.Name</td>
+                                    <td>@item.City</td>
                                     <td>@item.AdultPrice</td>
+                                    <td>@item.ChildPrice</td>
                                     <td>
                                         @if (item.IsApproved)
                                         {

@@ -220,7 +220,6 @@ C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\entity.pdb
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\business.dll
 C:\Users\Ahmet\Desktop\Proje\webui\bin\Debug\net5.0\business.pdb
-C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\Details.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\Index.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shop\List.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\ProductList.cshtml.g.cs
@@ -239,3 +238,4 @@ C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\RoleEdit.c
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\UserList.cshtml.g.cs
 C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Admin\UserEdit.cshtml.g.cs
+C:\Users\Ahmet\Desktop\Proje\webui\obj\Debug\net5.0\Razor\Views\Shared\_totalProduct.cshtml.g.cs

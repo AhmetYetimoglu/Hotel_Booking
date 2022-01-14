@@ -101,7 +101,7 @@
 																			<div class="book_date">
 																		<div class="book_date">
 																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-																				<input class="date" name="Products[0].ArrivalDate" id="datepicker" type="text" value="19/10/2021" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2021';}" required="">
+																				<input class="date" name="Products[0].ArrivalDate" id="datepicker" type="text" value="01/15/2022" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '01/15/2022';}" required="">
 																		</div>	
 
 																			</div>		
@@ -110,7 +110,7 @@
 																			<h5>Check Out</h5>
 																			<div class="book_date">
 																				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-																				<input class="date" name="Products[0].DepartureDate" id="datepicker1" type="text" value="19/10/2021" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2021';}" required="">
+																				<input class="date" name="Products[0].DepartureDate" id="datepicker1" type="text" value="01/25/2022" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '01/25/2022';}" required="">
 																			</div>					
 																		</li>
 																		<li class="span1_of_1 adult">
@@ -190,7 +190,7 @@
                     {    
                         //Her bir ürünü alıp göstereceğimiz bölüm 
 						<div class="container mt-5">
-							@await Html.PartialAsync("_product",product)
+							@await Html.PartialAsync("_totalProduct",product)
 						</div>         
                     }   
                 </div>

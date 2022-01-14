@@ -15644,6 +15644,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shared\\_totalProduct.cshtml",
+      "TargetPath": "Views\\Shared\\_totalProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"
@@ -15716,11 +15721,6 @@
     {
       "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Admin\\RoleEdit.cshtml",
       "TargetPath": "Views\\Admin\\RoleEdit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ahmet\\Desktop\\Proje\\webui\\Views\\Shop\\Details.cshtml",
-      "TargetPath": "Views\\Shop\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

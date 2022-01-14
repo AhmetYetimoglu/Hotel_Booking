@@ -189,7 +189,7 @@ namespace webui.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(ProductModel model)
+        public async Task<IActionResult> CreateProduct(ProductModel model,IFormFile file)
         {
             var entity = new Product()
             {
@@ -202,7 +202,18 @@ namespace webui.Controllers
                 ChildPrice = model.ChildPrice,
                 ImageUrl = model.ImageUrl
             };
-            
+            if(file!=null)
+            {
+                var exntention = Path.GetExtension(file.FileName);
+                var randomName = string.Format($"{Guid.NewGuid()}.{exntention}");
+                entity.ImageUrl = randomName;
+                var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\images",randomName);
+
+                using(var stream = new FileStream(path,FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+            }
             if(_productService.Create(entity))
             {
                 List<String> mesaj = new List<string>();
